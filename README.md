@@ -1,1 +1,1 @@
-IOS Claculator Clone
+IOS Calculator Clone
