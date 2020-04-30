@@ -1,38 +1,103 @@
-.App {
-  text-align: center;
+html,
+body {
+  padding: 0;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  background-color: #000000;
+  color: whitesmoke;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.calculator {
+  margin: auto;
+  /* border: solid red; */
+  width: 16vw;
+  height: 40vh;
+  border-radius: 25px;
+  background-color: black;
+  font-family: 'Roboto',
+    sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.equation {
+  /* border: solid purple; */
+  height: 8vh;
+  background-color: #181818;
+  /* border: 0.1px solid black; */
+  outline: 0.1px solid black;
+  font-size: 2.3em;
+  text-align: right;
+  padding-right: .5em;
+  padding-bottom: .1em;
+  border-radius: 5px 5px 0px 0px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-bottom: -1px;
+}
+
+.output {
+  /* border: solid pink; */
+  height: 8vh;
+  background-color: #181818;
+  /* border-left: 0.1px solid black;
+  border-right: 0.1px solid black; */
+  /* outline: 0.1px solid black; */
+  font-size: 2.5em;
+  text-align: right;
+  padding-right: .5em;
+  padding-bottom: .1em;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.keypad {
   color: white;
+  display: grid;
+  margin-top: -1;
 }
 
-.App-link {
-  color: #61dafb;
+.keypad button {
+  width: 4vw;
+  height: 6vh;
+  color: white;
+  outline: 0.01em solid black;
+  border: none;
+  font-size: 1em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.keypad button.number.zero {
+  width: 8vw;
+  text-align: left;
+  font-size: 1em;
+  padding-left: 1.3em;
+  border-radius: 0px 0px 0px 5px;
+}
+
+.keypad button.operator.equals {
+  border-radius: 0px 0px 5px 0px;
+}
+
+/* .keypad .row-one button {
+  border-left: 0.1px solid black;
+  border-right: 0.1px solid black;
+  border-bottom: 0.1px solid black;
+  border-top: 0px solid black;
+} */
+
+.top-dark {
+  background-color: #282828;
+}
+
+.number {
+  background-color: #484848;
+}
+
+.operator {
+  background-color: #FFA500;
 }
