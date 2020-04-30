@@ -38,6 +38,32 @@ body {
   justify-content: flex-end;
   align-items: flex-end;
   margin-bottom: -1px;
+  position: relative;
+}
+
+.equation .exit-menu {
+  position: absolute;
+  display: flex;
+  width: 1.1em;
+  height: .5em;
+  margin-top: 3px;
+  margin-left: 5px;
+  ;
+  /* justify-content: center;
+  align-items: center; */
+  flex-direction: row;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  /* border: solid pink; */
+}
+
+.equation .exit-menu .dots {
+  width: 3px;
+  height: 3px;
+  border: solid RGB(58, 58, 60);
+  background-color: RGB(58, 58, 60);
+  border-radius: 50%;
 }
 
 .output {
@@ -57,7 +83,7 @@ body {
 }
 
 .keypad {
-  color: white;
+  color: #d4d4d2;
   display: grid;
   margin-top: -1;
 }
@@ -65,7 +91,7 @@ body {
 .keypad button {
   width: 4vw;
   height: 6vh;
-  color: white;
+  color: #d4d4d2;
   outline: 0.01em solid black;
   border: none;
   font-size: 1em;
@@ -91,13 +117,21 @@ body {
 } */
 
 .top-dark {
-  background-color: #282828;
+  background-color: RGB(58, 58, 60);
+}
+
+.top-dark:active {
+  background-color: RGB(99, 99, 102);
 }
 
 .number {
-  background-color: #484848;
+  background-color: RGB(99, 99, 102);
+}
+
+.number:active {
+  background-color: RGB(174, 174, 178);
 }
 
 .operator {
-  background-color: #FFA500;
+  background-color: RGB(255, 149, 0);
 }

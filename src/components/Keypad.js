@@ -15,12 +15,16 @@ function Keypad({
   }
 
   let getOperator = (e) => {
-    setEquation([...equation, e.target.value])
-    setCurrentNumber([])
+    if (equation.length > 0) {
+      setEquation([...equation, e.target.value])
+      setCurrentNumber([])
+    }
   }
 
   let getAnswer = () => {
-    setOutput(eval(equation.join('')))
+    if (equation.length >= 3) {
+      setOutput(eval(equation.join('')))
+    }
   }
 
   let clearAll = () => {
@@ -31,13 +35,20 @@ function Keypad({
   return (
     <div className='container'>
       <div className='calculator'>
-        <div className='equation'>{equation}</div>
+        <div className='equation'>
+          <div className='exit-menu'>
+            <div className='dots'></div>
+            <div className='dots'></div>
+            <div className='dots'></div>
+          </div>
+          {equation}
+        </div>
         <div className='output'>{output}</div>
         <div className='keypad'>
           <div className='row-one'>
             <button onClick={clearAll} className='top-dark'>AC</button>
             <button className='top-dark'>+/-</button>
-            <button className='top-dark'>%</button>
+            <button className='top-dark' onClick={getOperator} value='%'>%</button>
             <button className='operator' onClick={getOperator} value='/'>&#247;</button>
           </div>
           <div className='row-two'>
@@ -60,7 +71,7 @@ function Keypad({
           </div>
           <div className='row-five'>
             <button className='number zero' onClick={getNumber} value='0'>0</button>
-            <button className='number'>.</button>
+            <button className='number' onClick={getOperator} value='.'>.</button>
             <button className='operator equals' onClick={getAnswer}>=</button>
           </div>
         </div>
@@ -71,81 +82,3 @@ function Keypad({
 }
 
 export default Keypad
-
-
-
-
-// let getNumber = (e) => {
-//   setOutput([...output, e.target.value])
-// }
-
-// let submitNumber = () => {
-//   setNumber([...number, output.join('')])
-//   setOutput([])
-// }
-
-// let getOperator = (e) => {
-//   submitNumber()
-//   setOperator(e.target.value)
-//   if (number.length >= 2) { evaluate() }
-// }
-
-// let evaluate = () => {
-//   console.log(`${+number[0]} ${operator} ${+number[1]}`)
-//   setOutput(eval(`${+number[0]} ${operator} ${+number[1]}`))
-// }
-
-
-
-// let submitNumber = () => {
-//   setNumber([...number, +output.join('')])
-//   setOutput([])
-// }
-
-// let getOperator = (e) => {
-//   submitNumber()
-//   setOperator(e.target.value)
-// }
-
-// let evaluate = () => {
-//   let outcome = eval(`${+number[0]} ${operator} ${+number[1]}`)
-//   setOutput(outcome.toString())
-//   setNumber(outcome)
-// }
-
-  // useEffect(() => {
-  //   if (number.length >= 2) { evaluate() }
-  // })
-
-
-
-
-  //works
-
-// useEffect(() => {
-//   if (currentNumber.length && previousNumber.length) {
-//     setOutput(eval(`${previousNumber}${operator}${currentNumber}`))
-//     setEquation(`${previousNumber}${operator}${currentNumber}`)
-//     setPreviousNumber([])
-//   }
-// })
-
-// useEffect(() => {
-//   if (output && !previousNumber) {
-//     setCurrentNumber(output)
-//   }
-// })
-
-// let getNumber = (e) => {
-//   setCurrentNumber([...currentNumber, e.target.value].join(''))
-// }
-
-// let getOperator = (e) => {
-//   setOperator(e.target.value)
-//   setPreviousNumber(currentNumber)
-//   setCurrentNumber([])
-// }
-
-
-// const [currentNumber, setCurrentNumber] = useState([])
-// const [previousNumber, setPreviousNumber] = useState([])
