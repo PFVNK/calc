@@ -10,6 +10,7 @@ body {
   width: 100vw;
   background-color: #000000;
   color: whitesmoke;
+  font-family: 'Roboto', sans-serif;
 }
 
 .calculator {
@@ -19,17 +20,14 @@ body {
   height: 40vh;
   border-radius: 25px;
   background-color: black;
-  font-family: 'Roboto',
-    sans-serif;
 }
 
 .equation {
   /* border: solid purple; */
-  height: 8vh;
+  height: 9vh;
   background-color: #181818;
   /* border: 0.1px solid black; */
   outline: 0.1px solid black;
-  font-size: 2.3em;
   text-align: right;
   padding-right: .5em;
   padding-bottom: .1em;
@@ -39,16 +37,25 @@ body {
   align-items: flex-end;
   margin-bottom: -1px;
   position: relative;
+  /* word-wrap: break-word; */
+}
+
+.equation-output {
+  position: absolute;
+  word-wrap: no-wrap;
+  /* border: solid red; */
+  width: 100%;
+  /* font-size: 2em; */
+  font-size: 2em;
 }
 
 .equation .exit-menu {
   position: absolute;
   display: flex;
-  width: 1.1em;
-  height: .5em;
+  width: 3.2em;
+  height: 12px;
   margin-top: 3px;
   margin-left: 5px;
-  ;
   /* justify-content: center;
   align-items: center; */
   flex-direction: row;
@@ -59,11 +66,16 @@ body {
 }
 
 .equation .exit-menu .dots {
-  width: 3px;
-  height: 3px;
-  border: solid RGB(58, 58, 60);
+  width: 12px;
+  height: 12px;
+  line-height: 12px;
+  /* border: solid RGB(99, 99, 102); */
   background-color: RGB(58, 58, 60);
   border-radius: 50%;
+  font-size: .8em;
+  font-weight: bold;
+  text-align: center;
+  color: RGB(58, 58, 60);
 }
 
 .output {
@@ -94,14 +106,15 @@ body {
   color: #d4d4d2;
   outline: 0.01em solid black;
   border: none;
-  font-size: 1em;
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
 .keypad button.number.zero {
   width: 8vw;
   text-align: left;
-  font-size: 1em;
-  padding-left: 1.3em;
+  font-size: 1.2em;
+  padding-left: 1.1em;
   border-radius: 0px 0px 0px 5px;
 }
 
@@ -118,6 +131,7 @@ body {
 
 .top-dark {
   background-color: RGB(58, 58, 60);
+  font-family: 'Roboto', sans-serif;
 }
 
 .top-dark:active {
@@ -126,6 +140,7 @@ body {
 
 .number {
   background-color: RGB(99, 99, 102);
+  font-family: 'Roboto', sans-serif;
 }
 
 .number:active {
@@ -134,4 +149,10 @@ body {
 
 .operator {
   background-color: RGB(255, 149, 0);
+  font-family: 'Roboto', sans-serif;
+}
+
+.equation .exit-menu:hover>.dots {
+  background-color: RGB(99, 99, 102);
+  color: black;
 }
