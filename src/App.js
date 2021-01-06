@@ -16,9 +16,9 @@ function App() {
   const [allClear, setAllClear] = useState('AC')
   const [sign, setSign] = useState(false)
 
-  useEffect(() => {
-    console.log(currentNumber)
-  })
+  // useEffect(() => {
+  //   console.log(currentNumber)
+  // })
 
   return (
     <div className="App">

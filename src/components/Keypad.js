@@ -24,6 +24,7 @@ function Keypad({
 }) {
 
   useEffect(() => {
+    console.log(operatorCount)
     console.log(currentAnswer)
     setOutput(currentAnswer)
     // if (sign) {
@@ -66,13 +67,7 @@ function Keypad({
 
 
   let getAnswer = () => {
-    if (currentAnswer === 0) {
-      setCalculation(eval(equation.join('')))
-      setCurrentAnswer(calculation)
-      // setEquation()
-    }
-
-    setCurrentAnswer(eval())
+    setCurrentAnswer(eval(equation.join('')))
   }
 
 
@@ -198,4 +193,45 @@ export default Keypad
 //   setOutput('0')
 //   setAllClear('AC')
 //   setSign(false)
+// }
+
+//most recent working
+// let getNumber = (e) => {
+//   let number = [...currentNumber, e.target.value].join('')
+//   console.log(`num: ${number}`)
+//   setEquation([...equation, number])
+//   setAllClear('C')
+// }
+
+// let getOperator = (e) => {
+//   setCurrentOperator(e.target.value)
+//   if (equation.length > 0) {
+//     setEquation([...equation, e.target.value])
+//     setCurrentNumber([])
+//     // getAnswer()
+//     setOperatorCount(operatorCount + 1)
+//   }
+
+//   if (operatorCount > 3) {
+//     getAnswer()
+//   }
+// }
+
+
+// let getAnswer = () => {
+//   setCurrentAnswer(eval(equation.join('')))
+// }
+
+
+// let clearAll = () => {
+//   setEquation([])
+//   setOutput('0')
+//   setAllClear('AC')
+//   setSign(false)
+//   setCurrentAnswer(0)
+// }
+
+
+// let changeSign = () => {
+//   sign ? setSign(false) : setSign(true)
 // }
